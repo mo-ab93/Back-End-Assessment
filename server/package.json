@@ -13,6 +13,9 @@
     "supertest": "^6.3.3"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "db:reset": "node db/scripts/resetdb.js",
+    "start": "node app.js"
   }
+  
 }
