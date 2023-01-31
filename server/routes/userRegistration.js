@@ -1,4 +1,3 @@
-
 const router = require('express').Router();
 const addUsers = require('../db/queries/addUsers');
 
