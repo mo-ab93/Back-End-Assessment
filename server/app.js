@@ -7,6 +7,7 @@ const {ENVIROMENT, PORT} = process.env;
 // Routes import
 const userRegistrationRoutes = require("./routes/userRegistration");
 const userLoginRoutes = require("./routes/userLogin");
+const tweetsRouter = require('./routes/tweetsRouters');
 
 const app = express();
 
@@ -20,6 +21,7 @@ app.use(bodyParser.json());
 
 app.use("/register", userRegistrationRoutes);
 app.use("/login", userLoginRoutes);
+app.use('/tweets', tweetsRouter);
 
 
 app.get('/', (req, res) => {
