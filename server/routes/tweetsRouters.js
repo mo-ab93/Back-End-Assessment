@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const { createTweet, getAllTweets, updateTweet, deleteTweet } = require('../queries/tweets');
+const { createTweet, getAllTweets, updateTweet, deleteTweet } = require('../db/queries/tweets');
 
 router.get('/', async (req, res) => {
   const { success, data, message } = await getAllTweets();
