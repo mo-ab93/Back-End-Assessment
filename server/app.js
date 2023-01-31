@@ -4,11 +4,22 @@ const bodyParser = require('body-parser');
 require('dotenv').config()
 const {ENVIROMENT, PORT} = process.env;
 
+// Routes import
+const userRegistrationRoutes = require("./routes/userRegistration");
+const userLoginRoutes = require("./routes/userLogin");
+
 const app = express();
 
+
 // middleware setup
-app.use(morgan(ENVIROMENT));
+app.use(morgan('dev'));
 app.use(bodyParser.json());
+
+
+
+
+app.use("/register", userRegistrationRoutes);
+app.use("/login", userLoginRoutes);
 
 
 app.get('/', (req, res) => {
